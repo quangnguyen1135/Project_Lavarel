@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+
+    public function getName($email) {
+        $customer_name = Customer::where('email', $email)->first();
+        return $customer_name;
+    }
 }

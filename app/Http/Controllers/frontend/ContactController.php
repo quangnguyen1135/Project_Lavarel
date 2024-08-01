@@ -14,26 +14,31 @@ class ContactController extends Controller
         return view('frontend.Contact.contact_index');
     }
 
-   public function postContact(Request $request)
-{
+    public function postContact(Request $request)
+    {
     $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email|max:255',
-        'content' => 'required|string',
+        'phone' => 'required',
+        'message' => 'required|string',
     ]);
+
 
     $name = $request->input('name');
     $email = $request->input('email');
-    $content = $request->input('content');
+    $phone = $request->input('phone');
+    $message = $request->input('message');
+
 
     // Save contact to the database
     Contact::create([
         'name' => $name,
         'email' => $email,
-        'content' => $content,
+        'phone' => $phone,
+        'message' => $message,
     ]);
 
-    Mail::to($email)->send(new ContactMail($name, $email, $content));
+    Mail::to($email)->send(new ContactMail($name, $email,$phone, $message));
     return redirect()->route('frontend.Contact.contact_index')->with('success', 'Message sent successfully and saved to the database!');
 
 }

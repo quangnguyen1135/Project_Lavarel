@@ -58,7 +58,7 @@
                             <input name='form_type' type='hidden' value='contact'>
                             <input name='utf8' type='hidden' value='✓'>
                             <label for="ContactFormName" class="hidden-label">Họ tên của bạn</label>
-                            <input type="text" id="ContactFormName" class="input-full" name="fullname" placeholder="Họ tên của bạn" autocapitalize="words" value="">
+                            <input type="text" id="ContactFormName" class="input-full" name="name" placeholder="Họ tên của bạn" autocapitalize="words" value="">
                             <label for="ContactFormEmail" class="hidden-label">Địa chỉ
                               email của bạn</label>
                             <input type="email" id="ContactFormEmail" class="input-full" name="email" placeholder="Địa chỉ email của bạn" autocorrect="off" autocapitalize="off" value="">

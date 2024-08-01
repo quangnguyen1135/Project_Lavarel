@@ -9,7 +9,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('/')}}backend/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="{{asset('/')}}backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
@@ -198,13 +198,13 @@
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-        <!-- Dashboard -->
+        <!-- Dashboard
         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="fas fa-tachometer-alt nav-icon"></i>
                 <p>Dashboard</p>
             </a>
-        </li>
+        </li> -->
 
         <!-- Quản lý người dùng -->
         <li class="nav-item">
@@ -218,7 +218,7 @@
         <li class="nav-item">
             <a href="{{ route('product.index') }}" class="nav-link">
             <i class="fa-solid fa-box-open"></i>
-                <p class="text">Kho sản phẩm</p>
+                <p class="text">Kho thực phẩm</p>
             </a>
         </li>
 
@@ -226,17 +226,11 @@
         <li class="nav-item">
             <a  href="{{ route('admin.product.add') }}" class="nav-link">
             <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
-                <p class="text">Thêm sản phẩm</p>
+                <p class="text">Thêm thực phẩm</p>
             </a>
         </li>
 
-        <!-- Informational -->
-        <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="fas fa-info-circle nav-icon"></i>
-                <p>Informational</p>
-            </a>
-        </li>
+
 
     </ul>
 </nav>

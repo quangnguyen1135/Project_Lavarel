@@ -16,34 +16,57 @@
 								<h1>Tạo tài khoản</h1>
 
 								<div class="form-vertical">
-									<form accept-charset='UTF-8' action='https://nhahangphuongnam.vn/account'
-										id='create_customer' method='post'>
+
+                            @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+									<form accept-charset='UTF-8'  action="{{route('registerPost')}} " method="post"
+										id='create_customer'>
+                                        @csrf
 										<input name='form_type' type='hidden' value='create_customer'>
 										<input name='utf8' type='hidden' value='✓'>
 
+										<label for="FirstName" class="hidden-label">Fullname</label>
+										<input type="text" name="name" id="FirstName" class="input-full"
+											placeholder="Họ Và Tên" autocapitalize="words" autofocus>
 
-
-
-										<label for="FirstName" class="hidden-label">Tên</label>
-										<input type="text" name="customer[first_name]" id="FirstName" class="input-full"
-											placeholder="Tên" autocapitalize="words" autofocus>
-
-										<label for="LastName" class="hidden-label">Họ</label>
-										<input type="text" name="customer[last_name]" id="LastName" class="input-full"
-											placeholder="Họ" autocapitalize="words">
-
-										<label for="Email" class="hidden-label">Email</label>
-										<input type="email" name="customer[email]" id="Email" class="input-full"
+                                            <label for="Email" class="hidden-label">Email</label>
+										<input type="email" name="email" id="Email" class="input-full"
 											placeholder="Email" autocorrect="off" autocapitalize="off">
 
+
+										<label for="CreatePassword" class="hidden-label">Số điện thoại</label>
+										<input type="number" name="phone" id="CreatePassword"
+											class="input-full" placeholder="Số điện thoại">
+
+										<label for="LastName" class="hidden-label">Địa chỉ</label>
+										<input type="text" name="address" id="diachi" class="input-full"
+											placeholder="Địa chỉ" autocapitalize="words">
+
+										<label for="LastName" class="hidden-label">Tỉnh/tp</label>
+										<input type="text" name="province" id="province" class="input-full"
+											placeholder="Tỉnh/Tp" autocapitalize="words">
+
+
+
 										<label for="CreatePassword" class="hidden-label">Mật khẩu</label>
-										<input type="password" name="customer[password]" id="CreatePassword"
+										<input type="password" name="password" id="CreatePassword"
 											class="input-full" placeholder="Mật khẩu">
+                                            <label for="CreatePassword" class="hidden-label">Xác thực lại Mật khẩu</label>
+										<input type="password" name="password_confirmation" id="CreatePassword"
+											class="input-full" placeholder="Xác thực lại Mật khẩu">
 
 										<p>
 											<input type="submit" value="Đăng ký" class="btn btn--full">
 										</p>
-										<a href="../index.html">Trở về</a>
+                                        <a href="/login">Bạn đã có tài khoản</a> <br>
+										<a href="/">Trở về trang chủ</a>
 
 
 										<input id='0cd1b37d9d5145c6a9cd368670ad5163' name='g-recaptcha-response'

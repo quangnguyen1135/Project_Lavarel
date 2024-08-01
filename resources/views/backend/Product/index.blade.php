@@ -50,7 +50,7 @@
                           Tên sản phẩm
                       </th>
                       <th style="width: 10%">
-                            Gía
+                            Giá
                       </th>
                       <th>
                         Mô tả
@@ -70,10 +70,10 @@
                           <a class="btn btn-info btn-sm" href="{{route('admin.product.edit')}}/{{$product->id}}">
                               <i class="fas fa-pencil-alt">
                               </i>
-                              Edit
+                              Sửa
                           </a>
                           <a class="btn btn-danger btn-sm" href="{{ route('admin.product.delete', ['id' => $product->id]) }}" onclick="return confirm('Are you sure you want to delete this product?')">
-    <i class="fas fa-trash"></i> Delete
+    <i class="fas fa-trash"></i> Xóa
 </a>
 
                       </td>

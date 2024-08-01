@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth; // Import Auth facade
 
 class ProductController extends Controller
 {
-    
+
     public function product()
     {
         $product_data = new Product();

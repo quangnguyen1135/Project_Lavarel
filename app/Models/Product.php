@@ -10,18 +10,76 @@ class Product extends Model
 {
     use HasFactory;
     // lấy product  từ database
-    public function getProducts(){
+    public function getProducts()
+    {
         //Query Builder
         //$products = DB::table('products')->get();
         //Eloquent ORM
         $products = Product::paginate(10);
         return $products;
     }
- // product home
- public function getProducthome(){
-    return Product::limit(6)->get();
-}
-    public function getOneProduct($id)
+
+
+    // phuong thuc lay san pham cho trang product
+    public function getALLProductsPageFrontend()
+    {
+        //Query Builder
+        //$products = DB::table('products')->get();
+        //Eloquent ORM
+        $products = Product::paginate(8);
+        return $products;
+    }
+    public function get_ByCategoryId1()
+    {
+        return Product::where('cate_id', 1)->paginate(8);
+    }
+    public function get_ByCategoryId2()
+    {
+        return Product::where('cate_id', 2)->paginate(8);
+    }
+    public function get_ByCategoryId3()
+    {
+        return Product::where('cate_id', 3)->paginate(8);
+    }
+    public function get_ByCategoryId4()
+    {
+        return Product::where('cate_id', 4)->paginate(8);
+    }
+    public function getProductsByCategoryId($cate_id)
+    {
+        return Product::where('cate_id', $cate_id)->paginate(8);
+    }
+    // phuong thuc lay san pham cho trang product
+
+
+    // product home
+    public function getProducthome()
+    {
+        return Product::limit(6)->get();
+    }
+
+    public function getProductsByCategoryId1()
+    {
+        return Product::where('cate_id', 1)->limit(6)->get();
+    }
+    public function getProductsByCategoryId2()
+    {
+        return Product::where('cate_id', 2)->limit(6)->get();
+    }
+    public function getProductsByCategoryId3()
+    {
+        return Product::where('cate_id', 3)->limit(6)->get();
+    }
+    public function getProductsByCategoryId4()
+    {
+        return Product::where('cate_id', 4)->limit(6)->get();
+    }
+
+    // product home
+
+
+    // lay id de xuat ra chi tiet san pham
+    public function getDetails($id)
     {
         return Product::find($id);
     }
@@ -51,5 +109,4 @@ class Product extends Model
     {
         return Product::created($productData);
     }
-
 }

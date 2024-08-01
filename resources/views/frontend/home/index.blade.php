@@ -82,29 +82,29 @@
                 </div>
                 <div class="hc-tabs-wrapper">
                     <div class="tab text-center">
-                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab1')" id="defaultOpenHcTab" data-wow-delay="0.2s" data-wow-duration="0.75s">Món ngon nổi
+                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab')" id="defaultOpenHcTab" data-wow-delay="0.2s" data-wow-duration="0.75s">Món ngon nổi
                             bật</button>
-                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab2')" data-wow-delay="0.4s" data-wow-duration="0.75s">Cuốn</button>
-                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab3')" data-wow-delay="0.6s" data-wow-duration="0.75s">Lẩu</button>
-                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab4')" data-wow-delay="0.8s" data-wow-duration="0.75s">Nướng</button>
-                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab5')" data-wow-delay="1s" data-wow-duration="0.75s">Món ăn nhẹ</button>
-                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab6')" data-wow-delay="1.2s" data-wow-duration="0.75s">Bánh tráng trảng bàng</button>
+                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab1')" data-wow-delay="0.4s" data-wow-duration="0.75s">Món Nhật</button>
+                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab2')" data-wow-delay="0.6s" data-wow-duration="0.75s">Món VN</button>
+                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab3')" data-wow-delay="0.8s" data-wow-duration="0.75s">Món Hàn</button>
+                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab4')" data-wow-delay="1s" data-wow-duration="0.75s">Món Thái</button>
+                        <button class="hc-tablinks wow fadeInLeft" onclick="openHcTab(event, 'hctab5')" data-wow-delay="1.2s" data-wow-duration="0.75s">Món Tráng miệng</button>
                     </div>
-                    <div id="hctab1" class="hc-tabcontent">
+                    <div id="hctab" class="hc-tabcontent">
                         <div class="grid-uniform">
                             @foreach ($products_home as $product)
                             <!-- Your loop content -->
                             <div class="grid__item large--one-third medium--one-third small--one-whole">
                                 <div class="product-item">
                                     <div class="product-img">
-                                        <a href="products/lau-ga-la-giang-lon.html">
+                                        <a href="products/{{$product->id}}">
                                             <img id="1002384862" class="lazyload" src="{{asset('/')}}frontend/" data-src="{{asset('/')}}frontend/img_product/{{$product->image}}" alt="Lẩu gà lá giang (L)" />
                                         </a>
                                     </div>
                                     <div class="product-item-info text-left">
                                         <hr class="green" />
                                         <div class="product-title">
-                                            <a href="products/lau-ga-la-giang-lon.html">{{$product->name}}</a>
+                                            <a href="products/{{$product->id}}">{{$product->name}}</a>
                                         </div>
                                         <div class="product-desc">
                                             {{$product->description}}
@@ -133,7 +133,178 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div id="hctab1" class="hc-tabcontent">
+                        <div class="grid-uniform">
+                            @foreach ($products_home1 as $product)
+                            <!-- Your loop content -->
+                            <div class="grid__item large--one-third medium--one-third small--one-whole">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="products/{{$product->id}}">
+                                            <img id="1002384862" class="lazyload" src="{{asset('/')}}frontend/" data-src="{{asset('/')}}frontend/img_product/{{$product->image}}" alt="Lẩu gà lá giang (L)" />
+                                        </a>
+                                    </div>
+                                    <div class="product-item-info text-left">
+                                        <hr class="green" />
+                                        <div class="product-title">
+                                            <a href="products/{{$product->id}}">{{$product->name}}</a>
+                                        </div>
+                                        <div class="product-desc">
+                                            {{$product->description}}
+                                        </div>
+                                        <div class="arrow">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="product_btn_price">
+                                            <div class="product_btn">
+                                                <button type="button" class="btnAddToCart add-to-cart" data-id="1007145735"><span><i class="fas fa-shopping-cart"></i></span><span>Order</span></button>
+                                            </div>
+                                            <div class="product-price clearfix">
+                                                <span class="current-price">{{$product->price}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="grid-uniform">
+                            <div class="grid__item large--one-whole medium--one-whole small--one-whole text-center">
+                                <div class="viewall_hbanner">
+                                    <a href="collections/mon-ngon-noi-bat.html">Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hctab2" class="hc-tabcontent">
+                        <div class="grid-uniform">
+                            @foreach ($products_home2 as $product)
+                            <!-- Your loop content -->
+                            <div class="grid__item large--one-third medium--one-third small--one-whole">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="products/{{$product->id}}">
+                                            <img id="1002384862" class="lazyload" src="{{asset('/')}}frontend/" data-src="{{asset('/')}}frontend/img_product/{{$product->image}}" alt="Lẩu gà lá giang (L)" />
+                                        </a>
+                                    </div>
+                                    <div class="product-item-info text-left">
+                                        <hr class="green" />
+                                        <div class="product-title">
+                                            <a href="products/{{$product->id}}">{{$product->name}}</a>
+                                        </div>
+                                        <div class="product-desc">
+                                            {{$product->description}}
+                                        </div>
+                                        <div class="arrow">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="product_btn_price">
+                                            <div class="product_btn">
+                                                <button type="button" class="btnAddToCart add-to-cart" data-id="1007145735"><span><i class="fas fa-shopping-cart"></i></span><span>Order</span></button>
+                                            </div>
+                                            <div class="product-price clearfix">
+                                                <span class="current-price">{{$product->price}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="grid-uniform">
+                            <div class="grid__item large--one-whole medium--one-whole small--one-whole text-center">
+                                <div class="viewall_hbanner">
+                                    <a href="collections/mon-ngon-noi-bat.html">Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hctab3" class="hc-tabcontent">
+                        <div class="grid-uniform">
+                            @foreach ($products_home3 as $product)
+                            <!-- Your loop content -->
+                            <div class="grid__item large--one-third medium--one-third small--one-whole">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="products/{{$product->id}}">
+                                            <img id="1002384862" class="lazyload" src="{{asset('/')}}frontend/" data-src="{{asset('/')}}frontend/img_product/{{$product->image}}" alt="Lẩu gà lá giang (L)" />
+                                        </a>
+                                    </div>
+                                    <div class="product-item-info text-left">
+                                        <hr class="green" />
+                                        <div class="product-title">
+                                            <a href="products/{{$product->id}}">{{$product->name}}</a>
+                                        </div>
+                                        <div class="product-desc">
+                                            {{$product->description}}
+                                        </div>
+                                        <div class="arrow">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="product_btn_price">
+                                            <div class="product_btn">
+                                                <button type="button" class="btnAddToCart add-to-cart" data-id="1007145735"><span><i class="fas fa-shopping-cart"></i></span><span>Order</span></button>
+                                            </div>
+                                            <div class="product-price clearfix">
+                                                <span class="current-price">{{$product->price}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="grid-uniform">
+                            <div class="grid__item large--one-whole medium--one-whole small--one-whole text-center">
+                                <div class="viewall_hbanner">
+                                    <a href="collections/mon-ngon-noi-bat.html">Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="hctab4" class="hc-tabcontent">
+                        <div class="grid-uniform">
+                            @foreach ($products_home4 as $product)
+                            <!-- Your loop content -->
+                            <div class="grid__item large--one-third medium--one-third small--one-whole">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="products/{{$product->id}}">
+                                            <img id="1002384862" class="lazyload" src="{{asset('/')}}frontend/" data-src="{{asset('/')}}frontend/img_product/{{$product->image}}" alt="Lẩu gà lá giang (L)" />
+                                        </a>
+                                    </div>
+                                    <div class="product-item-info text-left">
+                                        <hr class="green" />
+                                        <div class="product-title">
+                                            <a href="products/{{$product->id}}">{{$product->name}}</a>
+                                        </div>
+                                        <div class="product-desc">
+                                            {{$product->description}}
+                                        </div>
+                                        <div class="arrow">
+                                            <i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="product_btn_price">
+                                            <div class="product_btn">
+                                                <button type="button" class="btnAddToCart add-to-cart" data-id="1007145735"><span><i class="fas fa-shopping-cart"></i></span><span>Order</span></button>
+                                            </div>
+                                            <div class="product-price clearfix">
+                                                <span class="current-price">{{$product->price}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="grid-uniform">
+                            <div class="grid__item large--one-whole medium--one-whole small--one-whole text-center">
+                                <div class="viewall_hbanner">
+                                    <a href="collections/mon-ngon-noi-bat.html">Xem thêm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
     </section>
     <section id="home-member-days">

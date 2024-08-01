@@ -17,7 +17,7 @@
                         <form action="{{ route('admin.product.doAddProduct') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="code">Code</label>
+                                <label for="code">Mã thực phẩm</label>
                                 <input type="number" name="code" class="form-control" required>
                             </div>
                             <div class="form-group">
